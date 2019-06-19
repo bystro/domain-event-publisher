@@ -1,0 +1,34 @@
+{
+    "name": "bystro/domain-events-publisher",
+    "description": "Publishes domain events",
+    "keywords": ["domain", "event", "DDD", "bounded", "context"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Krzysztof Kubacki",
+            "email": "bystro@bystro.biz.pl",
+            "homepage": "http://bystro.biz.pl/"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "php-amqplib/php-amqplib": "^2.0",
+        "phpunit/phpunit": "^7.0"        
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bystro\\DomainEventPublisher\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "tests/"            
+        },
+        "classmap": [
+            "src/"
+        ]
+    }
+}

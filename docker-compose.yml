@@ -1,0 +1,8 @@
+version: '3'
+services:
+    queues:
+        container_name: domain_events_publisher_rabbit
+        image: rabbitmq:management
+        ports:
+            - "5672:5672"
+            - "15672:15672"
