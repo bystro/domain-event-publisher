@@ -16,6 +16,6 @@ class FakeDomainEvent implements DomainEvent
 
     public function occurredOn(): \DateTimeImmutable
     {
-        
+        return new \DateTimeImmutable();
     }
 }

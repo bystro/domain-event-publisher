@@ -39,7 +39,7 @@ final class RabbitMqMessageProducerTest extends TestCase
         $this->messageProducer->close(self::EXCHANGE_NAME);
 
         $this->expectException('Bystro\DomainEventPublisher\Infrastructure\Exception\ConnectionNotEstablishedException');
-        
-        $this->messageProducer->send('test-body', 'test-type', 'test-id', new \DateTimeImmutable());        
+
+        $this->messageProducer->send('test-body', 'test-type', 'test-id', new \DateTimeImmutable());
     }
 }
