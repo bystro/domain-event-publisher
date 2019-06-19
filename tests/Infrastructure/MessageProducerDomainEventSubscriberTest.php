@@ -22,19 +22,19 @@ final class MessageProducerDomainEventSubscriberTest extends TestCase
             new AMQPConnection('127.0.0.1', 5672, 'guest', 'guest')
         );
         $messageProducer->open(self::EXCHANGE_NAME);
-        
+
         $this->subscriber = new MessageProducerDomainEventSubscriber($messageProducer);
     }
 
     public function testSendingMessage(): void
     {
         $exception = null;
-        try {            
+        try {
             DomainEventPublisher::instance()->subscribe($this->subscriber);
 
             DomainEventPublisher::instance()->publish(new FakeDomainEvent('test-event'));
         } catch (\Exception $exception) {
-            var_dump($exception->getTraceAsString());            
+
         }
 
         $this->assertNull($exception);

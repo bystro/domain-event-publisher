@@ -12,6 +12,7 @@ class MessageProducerDomainEventSubscriber implements DomainEventSubscriber
 {
 
     private /* MessageProducer */ $messageProducer;
+    private /* Serializer */ $serializer;
 
     public function __construct(MessageProducer $messageProducer)
     {
