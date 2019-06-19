@@ -18,7 +18,12 @@ matrix:
         -
             php: nightly
     fast_finish: true
-before_script:
+before_install:
+    - docker-compose --version
+    - docker-compose build
+    - docker-compose up -d
+    - docker ps    
+before_script:    
     - >-
         echo 'always_populate_raw_post_data = -1' >> ~/.phpenv/versions/$(phpenv
         version-name)/etc/conf.d/travis.ini
