@@ -84,10 +84,10 @@ use Bystro\DomainEventPublisher\Domain\DomainEventPublisher;
 class File
 {
 
-  private /* string */ $filename;
-  private /* string */ $contents;
+    private /* string */ $filename;
+    private /* string */ $contents;
 
-  public function __construct(string $filename, string $contents)
+    public function __construct(string $filename, string $contents)
     {
         $this->filename = $filename;
         $this->contents = $contents;
@@ -108,3 +108,16 @@ class File
 
 FileSavedEvent is published in *example-exchange-name* queue.
 
+## Install
+
+### Composer
+In command line
+```
+composer require bystro/domain-events-publisher
+```
+or composer.json
+```
+"require": {       
+    "bystro/domain-events-publisher": "^1.0"
+}
+```
