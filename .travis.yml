@@ -7,12 +7,14 @@ php:
     - 7.1
     - 7.2
     - 7.3
+    - 7.4snapshot
     - nightly
 env:
     matrix:
-        - COMPOSER_PREFER=""
+        - COMPOSER_PREFER="--prefer-lowest --prefer-stable"        
         - COMPOSER_PREFER="--prefer-stable"
-        - COMPOSER_PREFER="--prefer-lowest --prefer-stable"
+        - COMPOSER_PREFER=""
+        
 matrix:
     allow_failures:
         -
