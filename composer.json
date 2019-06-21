@@ -1,6 +1,6 @@
 {
     "name": "bystro/domain-events-publisher",
-    "description": "Publishes domain events",
+    "description": "Publisher of domain events into RabbitMQ. It can be used to Bounded Context integrations.",
     "keywords": ["domain", "event", "DDD", "bounded", "context", "integration", "rabbitmq", "AMQP", "publisher"],
     "license": "BSD-3-Clause",
     "authors": [
