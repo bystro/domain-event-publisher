@@ -34,7 +34,8 @@ final class MessageProducerDomainEventSubscriberTest extends TestCase
 
             DomainEventPublisher::instance()->publish(new FakeDomainEvent('test-event'));
         } catch (\Exception $exception) {
-
+            var_dump($exception->getMessage());
+            var_dump($exception->getTraceAsString());
         }
 
         $this->assertNull($exception);
