@@ -3,7 +3,7 @@ declare(strict_types=1);
 namespace Test\Domain;
 
 use PHPUnit\Framework\TestCase;
-use PhpAmqpLib\Connection\AMQPConnection;
+use PhpAmqpLib\Connection\AMQPStreamConnection;
 use Bystro\DomainEventPublisher\Infrastructure\RabbitMqMessageProducer;
 use Bystro\DomainEventPublisher\Domain\DomainEventPublisher;
 use Bystro\DomainEventPublisher\Infrastructure\MessageProducerDomainEventSubscriber;
@@ -19,7 +19,7 @@ final class MessageProducerDomainEventSubscriberTest extends TestCase
     public function setUp(): void
     {
         $messageProducer = new RabbitMqMessageProducer(
-            new AMQPConnection('127.0.0.1', 5672, 'guest', 'guest')
+            new AMQPStreamConnection('127.0.0.1', 5672, 'guest', 'guest')
         );
         $messageProducer->open(self::EXCHANGE_NAME);
 
@@ -34,7 +34,7 @@ final class MessageProducerDomainEventSubscriberTest extends TestCase
 
             DomainEventPublisher::instance()->publish(new FakeDomainEvent('test-event'));
         } catch (\Exception $exception) {
-
+            
         }
 
         $this->assertNull($exception);

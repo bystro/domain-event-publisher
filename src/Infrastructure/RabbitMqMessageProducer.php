@@ -3,16 +3,16 @@ declare(strict_types=1);
 namespace Bystro\DomainEventPublisher\Infrastructure;
 
 use PhpAmqpLib\Message\AMQPMessage;
-use PhpAmqpLib\Connection\AMQPConnection;
+use PhpAmqpLib\Connection\AMQPStreamConnection;
 
 class RabbitMqMessageProducer implements MessageProducer
 {
 
-    protected /* AMQPConnection */ $connection;
+    protected /* AMQPStreamConnection */ $connection;
     protected /* AMQPChannel */ $channel;
     protected /* string */ $exchangeName;
 
-    public function __construct(AMQPConnection $aConnection)
+    public function __construct(AMQPStreamConnection $aConnection)
     {
         $this->connection = $aConnection;
         $this->channel = null;
