@@ -1,6 +1,6 @@
 {
     "name": "bystro/domain-events-publisher",
-    "description": "Publisher of domain events into RabbitMQ. It can be used to Bounded Context integrations.",
+    "description": "Publisher of domain events. Publishes events into RabbitMQ. It can be used to Bounded Context integrations.",
     "keywords": ["domain", "event", "DDD", "bounded", "context", "integration", "rabbitmq", "AMQP", "publisher"],
     "license": "BSD-3-Clause",
     "authors": [
@@ -12,7 +12,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "php-amqplib/php-amqplib": "^2.0",
+        "php-amqplib/php-amqplib": "^2.1",
         "ramsey/uuid": "^3.0",
         "jms/serializer": "^1.2"        
     },
