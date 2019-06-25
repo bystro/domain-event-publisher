@@ -21,10 +21,10 @@ Thanks to: Carlos(https://github.com/carlosbuenosvinos), Christian(https://githu
 use Bystro\DomainEventPublisher\Domain\DomainEventPublisher;
 use Bystro\DomainEventPublisher\Infrastructure\MessageProducerDomainEventSubscriber;
 use Bystro\DomainEventPublisher\Infrastructure\RabbitMqMessageProducer;
-use PhpAmqpLib\Connection\AMQPConnection;
+use PhpAmqpLib\Connection\AMQPStreamConnection;
 
 $messageProducer = new RabbitMqMessageProducer(
-        new AMQPConnection('127.0.0.1', 5672, 'guest', 'guest')
+        new AMQPStreamConnection('127.0.0.1', 5672, 'guest', 'guest')
 );
 $messageProducer->open('example-exchange-name');
 

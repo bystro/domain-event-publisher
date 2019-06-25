@@ -3,7 +3,7 @@ declare(strict_types=1);
 namespace Test\Domain;
 
 use PHPUnit\Framework\TestCase;
-use PhpAmqpLib\Connection\AMQPConnection;
+use PhpAmqpLib\Connection\AMQPStreamConnection;
 use Bystro\DomainEventPublisher\Infrastructure\RabbitMqMessageProducer;
 
 final class RabbitMqMessageProducerTest extends TestCase
@@ -16,7 +16,7 @@ final class RabbitMqMessageProducerTest extends TestCase
     public function setUp(): void
     {
         $this->messageProducer = new RabbitMqMessageProducer(
-            new AMQPConnection('127.0.0.1', 5672, 'guest', 'guest')
+            new AMQPStreamConnection('127.0.0.1', 5672, 'guest', 'guest')
         );
         $this->messageProducer->open(self::EXCHANGE_NAME);
     }
